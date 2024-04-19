@@ -1,4 +1,4 @@
-# Creating a blog using Node.js, Express.js and MongoDB as database
+# Creating a blog using Node.js, Express.js and MongoDB
 
 # Dependencies
 
