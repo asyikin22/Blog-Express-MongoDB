@@ -123,8 +123,10 @@ textarea {
     justify-content: end;
     grid-area: button;
   }
+
+  /*search button*/
   
-  .header__button button {
+  .header__button button {  
     display: flex;
     gap: 0.3rem;
     align-items: center;
@@ -135,7 +137,7 @@ textarea {
     border: 2px solid transparent;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--black);
+    color: black
   }
 
   .header__button button:hover {
@@ -275,8 +277,8 @@ textarea {
 
   .admin-post-controls .btn  {
     display: inline-block;
-    background-color: var(--black);
-    color: var(--gray-light);
+    background-color: brown;
+    color: whitesmoke;
     border: 0;
     text-decoration: none;
     font-size: .8rem;
@@ -292,8 +294,8 @@ textarea {
   
   /* SeachBar */
   .searchBar {
-    visibility: hidden;
-    transform: translateY(-100px);
+    /* visibility: hidden;
+    transform: translateY(-100px); */
     background-color: var(--black);
     padding: 4px 0;
     position: absolute;
@@ -315,7 +317,7 @@ textarea {
     position: absolute;
     top: 0;
     right: 0;
-    color: var(--gray-light);
+    color: yellowgreen;
     padding: 15px;
   }
   
