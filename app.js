@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const express = require('express')
-const expressLayout = require('express-ejs-layouts')
+const expressLayouts = require('express-ejs-layouts')
 
 const connectDB = require('./server/config/db');
 
@@ -15,7 +15,7 @@ connectDB();
 app.use(express.static('public'));
 
 //Middleware to enable layout support
-app.use(expressLayout);
+app.use(expressLayouts);
 
 // Set the layout file for view - this is where we see web pages
 app.set('layout', './layouts/main');

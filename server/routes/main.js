@@ -3,15 +3,40 @@ const router = express.Router();
 const Post = require('../models/Post');
 
 //GET METHOD - HOME
-router.get('', (req, res) => {
+router.get('', async (req, res) => {
 const locals = {
     title: "NodeJS Blog",
     description: "Simple blog created with NodeJs, Express and MongoDB"
 }
 
-    res.render('index', locals);
+try {
+    const data = await Post.find();
+    res.render('index', { ...locals, data });
+} catch (error) {
+    console.log(error)
+}
+
 });
 
+//POST METHOD - Post:id
+
+router.get('/post/:id', async (req, res) => {
+    try {
+        const locals = {
+            title: "NodeJS Blog",
+            description: "Simple blog created with NodeJs, Express and MongoDB"
+        }
+        
+        let slug = req.params.id;
+        
+        
+        const data = await Post.findById( { _id:slug});
+        res.render('post', { ...locals, data });
+    } catch (error) {
+        console.log(error)
+    }
+    
+    });
 
 
 
@@ -26,5 +51,32 @@ const locals = {
 router.get('/about', (req, res) => {
     res.render('about');
 });
+
+// function insertPostData () {
+//     Post.insertMany([
+//         {
+//             title: "Building a Blog - Part 1",
+//             body: "This is the body text"
+//         },
+//         {
+//             title: "Building a Blog - Part 2",
+//             body: "This is the body text"
+//         },
+//         {
+//             title: "Building a Blog - Part 3",
+//             body: "This is the body text"
+//         },
+//         {
+//             title: "Building a Blog - Part 4",
+//             body: "This is the body text"
+//         },
+//         {
+//             title: "Building a Blog - Part 5",
+//             body: "This is the body text"
+//         },
+//     ])
+// }
+
+// insertPostData();
 
 module.exports = router;
