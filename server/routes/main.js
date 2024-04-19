@@ -1,7 +1,8 @@
 const express = require('express');
-const router = express.Router()
+const router = express.Router();
+const Post = require('../models/Post');
 
-//Routers
+//GET METHOD - HOME
 router.get('', (req, res) => {
 const locals = {
     title: "NodeJS Blog",
@@ -10,6 +11,17 @@ const locals = {
 
     res.render('index', locals);
 });
+
+
+
+
+
+
+
+
+
+
+
 
 router.get('/about', (req, res) => {
     res.render('about');
