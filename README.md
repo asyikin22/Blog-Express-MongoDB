@@ -80,6 +80,10 @@
 
 ![image](https://github.com/asyikin22/Blog-Express-MongoDB/assets/148519441/d5b9278e-bb31-4da4-90fd-eaa49eb5934b)
 
+# LOGOUT
+
+![image](https://github.com/asyikin22/Blog-Express-MongoDB/assets/148519441/41f7ee3c-bca0-4bc6-97d9-f2c629836ee4)
+
 
 # Issues
 
