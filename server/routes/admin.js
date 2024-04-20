@@ -174,7 +174,28 @@ router.put('/edit-post/:id', authMiddleware, async (req, res) => {
     }
 });
 
+//DELETE METHOD - Admin - Delete post
 
+router.delete('/delete-post/:id', authMiddleware, async (req, res) => {
+    
+    try {
+        
+        await Post.deleteOne( { _id: req.params.id })
+        res.redirect('/dashboard')
+
+    } catch (error) {
+        console.log(error)
+    }
+
+});
+
+//GET METHOD - Admin - Logout (remove cookie)
+
+router.get('/logout', (req, res) => {
+    res.clearCookie('token');
+    // res.json({message: 'Logout Successful!'});
+    res.redirect('/')
+});
 
 
 

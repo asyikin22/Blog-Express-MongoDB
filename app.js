@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
+const methodOverride = require('method-override')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
@@ -20,6 +21,9 @@ app.use(express.json());
 
 //Middleware to parse cookies attached to client's request
 app.use(cookieParser());
+
+//Middleware to override HTTP method of a request
+app.use(methodOverride('_method'))
 
 //Middleware to manage session data
 app.use(session({
